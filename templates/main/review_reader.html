@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Caliber: Testimonials{% endblock %}
+
+{% block testimonials %}active{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-5 pt-3 pb-3">
+
+<h1 class="text-center pt-5 mb-3" style="color:white;font-size:4vw;">{{ reviews.count }} Had Reviewed Us 🤯</h1>
+
+<hr class="mt-0 mb-5" style="color:black;">
+
+
+
+<div class="card my-5">
+  {% comment %} <div class="card-header">
+    {{ review.name }}
+  </div>
+
+  <div class="card-body">
+    <h5 class="card-title my-3" style="color:grey;"><h5>{{ review.desc }}</h5> 
+  
+<div class="card-footer text-muted">
+    {{ review.time }}
+  </div>
+  </div> {% endcomment %}
+
+{% comment %} <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ review.desc }}</h5>
+        <p class="card-text">-{{ review.name }}</p>
+        <p class="card-text">posted on: {{ review.time }}</p>
+      </div>
+    </div>
+  </div>
+</div> {% endcomment %}
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4 px-5 py-5" style="background-color:black;">
+{% for review in reviews %}
+  <div class="col">
+     <div class="card h-100"> 
+      <div class="card-body">
+        <h5 class="card-title">{{ review.desc }}</h5>
+        <p class="card-text">-{{ review.name }}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">{{ review.time }}</small>
+      </div>
+    </div>
+  </div>
+{% endfor %} 
+</div>
+
+
+
+</div>
+
+
+
+<div class="text-center my-3">
+<a href="{% url 'review' %}"> <button  class="btn btn-outline-light py-2 pt-3 px-4" style="border: 2px solid"><h5>How can we improve</h5></button></a>
+</div>
+</div>
+
+
+
+
+{% endblock %}

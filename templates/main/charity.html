@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block charity %}active{% endblock %}
+{% block content %}
+
+<div class="container text-center my-5 py-5">
+<h1 class="text-center pt-4 mb-4" style="color: white;font-size:10vw;">Feed <b style="color:#40E0D0;">Some.</b></h1>
+<h1 class="text-center py-4 mb-4" style="color: white;font-size:10vw;">Feel <b style="color:#40E0D0;">More.</b></h1>
+<h1 class="text-center py-4 mb-44" style="color: white;font-size:5vw;">Just Do Whatever You Could To Feed The <b style="color:#40E0D0;">Starving.</b></h1>
+<h1 class="text-center py-4 mb-4" style="color: white;font-size:5vw;">Donate Funds By Using The QR Code Given Below</b></h1>
+<img src="{% static "main/amma_donation.jpg" %}" class="img-fluid" alt="amms_qr_code">
+<h1 class="text-center py-4 mb-4 mt-3" style="color: white;font-size:5vw;">Else Use UPI : amma@dlb To Donate</b></h1>
+<h1 class="text-center py-4 mb-4" style="color: white;font-size:10vw;">We Appreciate Your <b style="color:#40E0D0;">Contrbution.</b></h1>
+<h1 class="text-center pt-4 mb-2" style="color: white;font-size:5vw;">For More Details Visit: <a href="https://www.amritapuri.org/donate" target="_blank"></b></h1>
+<br>
+<button class="btn btn-outline-light" style="border: 2px solid" ><h1>www.amritapuri.org</h1></button></a>
+</div>
+
+{% endblock %}

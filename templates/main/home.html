@@ -1,0 +1,64 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %}Caliber: home{% endblock %}
+
+{% block home %}active{% endblock %}
+
+{% block content %}
+<div class="my-5 pt-5 text-center">
+<h3 class="text-center pt-3 mb-3" style="color: white;font-size:5vw;">Total Blogs Posted : <b style="color:#40E0D0;">{{ all_blogs.count }}.</b></h3>
+</div>
+<div class="container mt-5 py-4">
+
+{% comment %} <div class="text-center">
+<img src="{% static 'main/sitting.png' %}" class="img-fluid" alt="humaaan siting">
+<p class="h3">This is an</p>
+</div>  {% endcomment %}
+<h1 class="text-center pt-3 mb-3" style="color: white;font-size:10vw;">Why Should You Choose <b style="color:#40E0D0;">Us.</b></h1>
+<div class="row row-cols-1 row-cols-md-3 g-4 py-5 my-3">
+
+  <div class="col px-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="card-title text-center py-5" style="line-height: 3;">
+        We Make It Simply 
+        <b style="color:#40E0D0;background-color:black" class="px-3 py-3">ADDICTIVE</b></h2>
+      </div>
+    </div>
+  </div>
+
+    <div class="col px-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="card-title text-center py-5" style="line-height: 3;">We Work On It To Be <b style="color:#40E0D0;background-color:black" class="px-3 py-3">FUNKY</b></h2>
+      </div>
+    </div>
+  </div>
+
+    <div class="col px-4">
+    <div class="card h-100">
+      <div class="card-body">
+        <h2 class="card-title text-center py-5" style="line-height: 3;">Way Interesting Than <b style="color:#40E0D0;background-color:black" class="px-3 py-3">MOST</b></h2>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<h1 class="text-center pt-3 mb-3" style="color: white;font-size:8vw;">SHARE <b style="color:#40E0D0;">US.</b></h1>
+<h1 class="text-center mt-5" style="color: white;font-size:8vw;">SUPPORT <b style="color:#40E0D0;">US.</b></h1>
+
+<h1 class="text-center mx-5 mt-5" style="color: white;font-size:8vw;">WE ARE THE FRESH CULT OF <b style="color:#40E0D0;">BLOGS.</b></h1>
+
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}   

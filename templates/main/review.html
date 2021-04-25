@@ -1,0 +1,76 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="container my-5 py-2 pt-4">
+
+<h1 class="text-center pt-5 mb-3" style="color: white;font-size:4vw;">Thanks for Reviewing us ✌️</h1>
+
+<hr class="mt-0" style="color:black;">
+
+{% if error %}
+<div class="alert alert-danger alert-dismissible fade show text-center mt-5" role="alert"> 
+  <h5>{{ error }}</h5>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+
+<form method="POST">{% csrf_token %}
+
+  <div class="form-group my-5">
+    <label for="name" class="pb-2" style="color:white;">Name</label>
+    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Hello! whats your name" maxlength="100" minlength="3">
+    <small id="emailHelp" class="form-text mt-2" style="color:white;">Enter your name</small>
+  </div>
+
+
+  <div class="form-floating my-5">
+    <textarea class="form-control" placeholder="Leave a comment here" id="desc" name="desc" style="height: 100px"></textarea>
+    <label for="desc">How can we improve</label>
+  </div>
+
+
+<div class="text-center">
+<button type="submit" class="btn btn-outline-light py-2 pt-3 px-4" style="border: 2px solid"><h5>Let us what you know 😉</h5></button>
+</div>
+
+
+
+</form>
+
+<div class="text-center mt-5 my-5 pb-3">  
+  <div class="spinner-grow text-primary mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+
+<div class="spinner-grow text-success mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-danger mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-warning mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-info mx-3" role="status">
+  <span class="sr-only"></span>
+  </div>
+
+</div>
+
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

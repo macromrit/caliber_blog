@@ -1,0 +1,93 @@
+{% extends 'main/base.html' %}
+
+
+{% block title %}Caliber: ContactUs{% endblock %}
+
+{% block contact %}active{% endblock %}
+
+
+{% block content %}
+
+<div class="container my-5 py-2 pt-4">
+
+<h1 class="text-center pt-5 mb-3" style="color: white;font-size:4vw;">Contacted Tons 🤯 Still thriving ✌️ </h1>
+
+<hr class="mt-0" style="color:black;">
+
+{% if error %}
+<div class="alert alert-danger alert-dismissible fade show text-center mt-5 px-4 pt-3 pb-2" role="alert"> 
+  <h5>{{ error }}</h5>
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endif %}
+
+<form method="POST" >{% csrf_token %}
+
+
+  <div class="form-group my-5">
+    <label for="name" class="pb-2" style="color:white;">Name</label>
+    <input type="text" class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Hello! whats your name" maxlength="100" minlength="3">
+    <small id="emailHelp" class="form-text mt-2" style="color:white;">No worries!! your name would be extremely confidential</small>
+  </div>
+
+  <div class="form-group my-5">
+    <label for="email" class="pb-2" style="color:white;">Email address</label>
+    <input type="text" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" maxlength="100" minlength="5">
+    <small id="emailHelp" class="form-text mt-2" style="color:white;">We'll never share your email with anyone else.</small>
+  </div>
+
+  <div class="form-group my-5">
+    <label for="phone" class="pb-2" style="color:white;">Phone no.</label>
+    <input type="number" class="form-control" id="phone" name="phone" max="9999999999" min="100" aria-describedby="emailHelp" placeholder="Will ring you asap">
+    <small id="emailHelp" class="form-text" style="color:white;">Please provide your dec digit phone number</small>
+  </div>
+
+
+  <div class="form-floating my-5">
+    <textarea class="form-control" placeholder="Leave a comment here" id="desc" name="desc" style="height: 100px"></textarea>
+    <label for="desc">Your Thoughts</label>
+  </div>
+
+<div class="form-check form-switch my-5">
+  <input class="form-check-input" type="checkbox" id="not_a_bot" name="not_a_bot">
+  <label class="form-check-label" for="not_a_bot" style="color:white;">Feel free to ring me ( else would consider mail )</label>
+</div>
+
+  <div class="text-center">
+  <button type="submit" class="btn btn-outline-light py-2 pt-3 px-4" style="border: 2px solid"><h5>Thanks for choosing us 😉</h5></button>
+  </div>
+
+
+
+
+
+  
+</div>
+</div>
+
+</form>
+
+
+<div class="text-center mt-5 my-5 pb-3">  
+  <div class="spinner-grow text-primary mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+
+<div class="spinner-grow text-success mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-danger mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-warning mx-3" role="status">
+  <span class="sr-only"></span>
+</div>
+<div class="spinner-grow text-info mx-3" role="status">
+  <span class="sr-only"></span>
+  </div>
+
+
+
+</div>
+</div>
+{% endblock %}

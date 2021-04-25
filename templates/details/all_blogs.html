@@ -1,0 +1,67 @@
+{% extends 'main/base.html' %}
+{% block title %}Caliber: Blogs{% endblock %}
+
+{% block blogs %}active{% endblock %}
+
+{% block content %}
+
+
+<div class="container my-5 py-5">
+
+      <form class="d-flex" method="GET" action="{% url 'details:all_blogs' %}">
+        <input class="form-control me-2" type="search" placeholder="Search Blogs" aria-label="Search" name='q' id="id_q" value="{{ query }}">
+        <button class="btn btn-outline-light" type="submit" style="border: 2px solid">Search</button>
+      </form>
+
+
+{% if all_blogs %}
+<h1 class="text-center pt-5 mb-3" style="color: white;font-size:4vw;">{{ all_blogs.count }} Boost Up.. We got some 😃, to get all the latest blogs search 'all'</h1>
+
+{% for all_blog in all_blogs%}
+
+<div class="card text-center my-5">
+
+  <div class="card-header">
+    {{ all_blog.featuring }}
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ all_blog.title }}</h5>
+    <p class="card-text px-5">{{ all_blog.content|striptags|truncatechars:200|safe }}</p>
+    <a href="{% url 'details:specified' all_blog.id %}" ><button class="btn btn-outline-dark pt-2 pb-1" style="border: 2px solid"><h6>Read more</h6></button></a>
+  </div>
+  <div class="card-footer text-muted">
+    {{ all_blog.time_valid }}
+  </div>
+</div>
+
+  {% endfor %}
+
+{% else %}
+<div class="container my-5 py-5 text-center">
+<h1 style="color: white;">Oops 😔  "{{query}}" sounds complicated... try something else</h1>
+<h1 style="color: white;" class="mt-5 mb-0">Else make us aware of what are you trying to search: by posting testimonials, if not... contact us by giving your details and write a description about the results you are opting... Thanks for supporting</h1>
+  <div class="text-center my-5">
+  <a href="{% url 'contact' %}">
+  <button class="btn btn-outline-light py-2 pt-3 px-4" style="border: 2px solid"><h5>Contact Us</h5></button></a>
+  </div>
+  <div class="text-center mt-4">
+  <a href="{% url 'review' %}">
+  <button class="btn btn-outline-light py-2 pt-3 px-4" style="border: 2px solid"><h5>Testimonials</h5></button></a>
+  </div>
+
+{% endif %}
+
+
+</div>
+
+
+</div>
+
+
+{% comment %} <script type="text/javascript">
+  document.getElementById("id_q").value = "{{query}}"
+  {% comment %} using this script as sarch value doesnt work great with django
+</script> {% endcomment %}
+
+
+{% endblock %}
