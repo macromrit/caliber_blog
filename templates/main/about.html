@@ -11,13 +11,13 @@
 <div class="container mt-5 mb-0 py-5">
 <h1 style="color: white;font-size:3vw;" class="my-5 text-center">Site Aired On :  April 25, Sunday</h1> 
 <h1 style="color: white;font-size:5vw;" class="my-5 text-center">Our Editors</h1> 
-<div style="background-color:white; height:10px;"></div>
+<div style="background-color:#40E0D0; height:10px;"></div>
 {% for editors in about %}
 <div class="text-center">
-<h1 class="pt-3 mb-3" style="color: white;font-size:3vw;"><br>Name        = {{ editors.editor }}</b></h1>
-<h1 class="pt-3 mb-3" style="color: white;font-size:3vw;"><br>Designation = {{ editors.posting }}</b></h1>
-<h1 class="pt-3 mb-3" style="color: white;font-size:3vw;"><br>Date Joined = {{ editors.date_joined }}</b></h1>
-<div style="background-color:white; height:10px;"></div>
+<h1 class="pt-3 mb-3" style="color: white;font-size:3vw;"><br>{{ editors.editor }}</b></h1>
+<h1 class="pt-3 mb-3" style="color: #40E0D0;font-size:3vw;"><br>{{ editors.posting }}</b></h1>
+<h1 class="pt-3 mb-3" style="color: white;font-size:3vw;"><br>{{ editors.date_joined }}</b></h1>
+<div style="background-color:#40E0D0; height:10px;"></div>
 </div>
 {% endfor %}
 
